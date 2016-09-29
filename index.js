@@ -2,7 +2,6 @@
  * (C) 2016 Alexander Mykhailenko
  * MIT LICENCE
  */
-
 'use strict';
 
 var fs = require('fs');
