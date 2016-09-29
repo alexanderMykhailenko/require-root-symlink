@@ -1,0 +1,27 @@
+{
+  "name": "require-root-symlink",
+  "version": "0.0.2",
+  "description": "Making components first-class for node.js with symlinks",
+  "keywords": [
+    "require-root-symlink",
+    "require",
+    "symlink",
+    "first-class",
+    "root path",
+    "include"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderMykhailenko/require-root-symlink.git"
+  },
+  "author": "Alexander Mykhailenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexanderMykhailenko/require-root-symlink/issues"
+  },
+  "homepage": "https://github.com/alexanderMykhailenko/require-root-symlink#readme"
+}
