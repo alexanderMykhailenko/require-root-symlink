@@ -7,7 +7,7 @@ INSTALL
 
 USAGE
 -----
- - In `index.js` on top add next code: `require('require-root-symlink')(__dirname);;`
+ - In `index.js` on top add next code: `require('require-root-symlink')(__dirname);`
  - When you will run your nodejs application `require-root-symlink` module will check and create symlink: `node_modules/_` to `.`
  - Now you can use `_` in `require` string:
     
