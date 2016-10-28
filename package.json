@@ -1,6 +1,6 @@
 {
   "name": "require-root-symlink",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Making components first-class for node.js with symlinks",
   "keywords": [
     "require-root-symlink",
