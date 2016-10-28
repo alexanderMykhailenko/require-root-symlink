@@ -4,26 +4,30 @@
  */
 
 'use strict';
-
+const debug = require('debug')('require-root-symlink');
 var fs = require('fs');
 var path = require('path');
 var cp = require('child_process');
 
 function init(app_root_folder) {
-    console.log('require-root-symlink start working');
+    debug('start working');
+    if (!app_root_folder) {
+        debug('please provide app_root_folder');
+        throw new Error('please provide app_root_folder');
+    }
 
     var isWin = /^win/.test(process.platform);
     var node_modules_folder = process.env.NODE_PATH ? process.env.NODE_PATH : path.resolve(app_root_folder, './node_modules');
 
     // Check and create symlink for firt start
     if (fs.existsSync(path.resolve(node_modules_folder, '_'))) {
-        console.log('Symlink "_" currently exist, continue working...');
+        debug('Symlink "_" currently exist, continue working...');
     } else {
         if (!fs.existsSync(node_modules_folder)) {
-            console.log('Folder "' + node_modules_folder + '" NOT exist, trying make it...');
+            debug('Folder "%s" NOT exist, trying make it...', node_modules_folder);
             fs.mkdirSync(node_modules_folder);
         }
-        console.log('Symlink "_" NOT exist, trying make it...');
+        debug('Symlink "_" NOT exist, trying make it...');
 
         var spawnArgs = {env: process.env, cwd: node_modules_folder, stdio: 'inherit'};
         if (isWin) {
@@ -33,14 +37,15 @@ function init(app_root_folder) {
         }
 
         if (fs.existsSync(path.resolve(node_modules_folder, '_'))) {
-            console.log('Symlink "_" successfully created, continue working...');
+            debug('Symlink "_" successfully created, continue working...');
         } else {
-            console.error('Symlink "_" NOT created, try resolve it manually');
-            process.exit();
+            debug('Symlink "_" NOT created, try resolve it manually');
+            throw new Error('Symlink "_" NOT created, try resolve it manually');
         }
     }
-    console.log('require-root-symlink end working');
-
+    debug('end working');
 }
 
 module.exports = init;
+
+console.log(init(__dirname));

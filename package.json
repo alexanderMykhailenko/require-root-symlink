@@ -1,6 +1,6 @@
 {
   "name": "require-root-symlink",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Making components first-class for node.js with symlinks",
   "keywords": [
     "require-root-symlink",
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/alexanderMykhailenko/require-root-symlink/issues"
   },
-  "homepage": "https://github.com/alexanderMykhailenko/require-root-symlink#readme"
+  "homepage": "https://github.com/alexanderMykhailenko/require-root-symlink#readme",
+  "dependencies": {
+    "debug": "^2.2.0"
+  }
 }

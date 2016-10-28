@@ -18,5 +18,10 @@ USAGE
 
 CHANGELOG
 ---------
+### October 30, 2016 (version: 0.0.3)
+- Refactoring
+- Remove todos, console.log, etc.
+
+
 ### September 29, 2016
 - first release  
