@@ -47,5 +47,3 @@ function init(app_root_folder) {
 }
 
 module.exports = init;
-
-console.log(init(__dirname));
